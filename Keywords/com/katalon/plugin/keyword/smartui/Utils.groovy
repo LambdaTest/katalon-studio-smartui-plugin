@@ -38,7 +38,7 @@ class Utils {
 		SmartUIConfig config = new SmartUIConfig()
 				.withProjectToken(Utils.PROJECT_TOKEN);
                 
-        config.setTestType("katalon-studio-smartui-plugin")
+        config.setTestType("katalon-studio-smartui-plugin");
 		if (port != null) {
 			config = config.withPort(port);
 		}
