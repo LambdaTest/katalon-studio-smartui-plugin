@@ -23,7 +23,7 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://lambdatest.com')
 
-CustomKeywords.'com.katalon.plugin.keyword.smartui.BasicKeywords.takeSnapshot'('plugin-snapshot')
+CustomKeywords.'com.katalon.plugin.keyword.smartui.SmartKeywords.takeSnapshot'('plugin-snapshot')
 
 CustomKeywords.'com.katalon.plugin.keyword.smartui.SmartKeywords.stopServer'()
 

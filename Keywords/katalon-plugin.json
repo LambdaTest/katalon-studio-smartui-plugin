@@ -1,5 +1,5 @@
 {
-   "keywords": ["com.katalon.plugin.keyword.smartui.BasicKeywords", "com.katalon.plugin.keyword.smartui.SmartKeywords"],
+   "keywords": ["com.katalon.plugin.keyword.smartui.SmartKeywords"],
    "configuration": {
       "settingId": "com.kms.katalon.keyword.SmartUI-Keywords",
       "settingPage": {
