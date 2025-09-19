@@ -21,3 +21,5 @@ settings/external/com.kms.katalon.keyword.SmartUI-Keywords.properties
 .cache
 
 .idea
+
+.vscode

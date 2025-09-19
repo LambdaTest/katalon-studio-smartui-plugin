@@ -33,6 +33,15 @@ class SmartKeywords {
 		smartUI.takeSnapshot(driver, snapshotName)
 	}
 
+	static void takeSnapshot(String snapshotName, Map<String, Object> options) throws IOException {
+		SmartUI smartUI = SmartKeywords.SMARTUI_CLIENT
+		if (smartUI == null) {
+			throw new IllegalStateException("SmartUI server is not started")
+		}
+		WebDriver driver = Utils.getDriver()
+		smartUI.takeSnapshot(driver, snapshotName, options)
+	}
+
 	@Keyword
 	static void stopServer() {
 		if (SmartKeywords.SMARTUI_CLIENT == null) {
