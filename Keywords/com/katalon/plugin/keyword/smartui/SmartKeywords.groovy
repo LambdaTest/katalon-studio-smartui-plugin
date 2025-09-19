@@ -33,6 +33,7 @@ class SmartKeywords {
 		smartUI.takeSnapshot(driver, snapshotName)
 	}
 
+	@Keyword
 	static void takeSnapshot(String snapshotName, Map<String, Object> options) throws IOException {
 		SmartUI smartUI = SmartKeywords.SMARTUI_CLIENT
 		if (smartUI == null) {
