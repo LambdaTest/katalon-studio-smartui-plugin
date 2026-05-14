@@ -1,78 +1,112 @@
-# katalon-studio-smartui-plugin — TestMu AI (Formerly LambdaTest)
+# Run Katalon Studio Tests with SmartUI Plugin on TestMu AI (Formerly LambdaTest)
 
-The **Katalon Studio SmartUI Plugin** integrates [Katalon Studio](https://www.katalon.com/) with [TestMu AI SmartUI](https://www.testmuai.com/support/docs/smart-visual-regression-testing/), enabling **visual regression testing** directly inside your test automation workflows.  
+<p align="center">
+  <a href="https://www.testmuai.com/"><img src="https://img.shields.io/badge/MADE%20BY%20TestMu%20AI-000000.svg?style=for-the-badge&labelColor=000" alt="Made by TestMu AI"></a>
+  <a href="https://github.com/katalon-studio/katalon-studio/releases"><img src="https://img.shields.io/github/v/release/katalon-studio/katalon-studio.svg?style=for-the-badge&labelColor=000000" alt="Katalon Studio version"></a>
+  <a href="https://community.testmuai.com/"><img src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&labelColor=000000" alt="Community"></a>
+</p>
 
-With this plugin, you can:
-- Capture screenshots at any point in your test flow  
-- Compare them with visual baselines  
-- Detect UI changes early in your CI/CD pipeline  
+## Getting Started
 
----
+[TestMu AI](https://www.testmuai.com/) (Formerly LambdaTest) is the world's first full-stack AI Agentic Quality Engineering platform that empowers teams to test intelligently, smarter, and ship faster. Built for scale, it offers a full-stack testing cloud with 10K+ real devices and 3,000+ browsers. With AI-native test management, MCP servers, and agent-based automation, TestMu AI supports Selenium, Appium, Playwright, and all major frameworks. 
 
-## 🚀 Features
-- 📸 **Visual Snapshots** — capture UI snapshots during test execution.  
-- 🔄 **Baseline Comparison** — automatically compare snapshots against stored baselines in SmartUI.  
-- 🧪 **Visual Regression Detection** — identify unintended UI changes with pixel-level accuracy.  
-- 📊 **SmartUI Dashboard** — view diffs, approve/reject changes, and track regressions over time.  
+With TestMu AI (Formerly LambdaTest), you can run visual regression tests using Katalon Studio with the TestMu AI SmartUI Plugin. This sample shows how to configure Katalon Studio + SmartUI to run on the TestMu AI cloud.
 
----
+- [Sign up on TestMu AI](https://www.testmuai.com/register/) (Formerly LambdaTest).
+- Follow the [TestMu AI Documentation](https://www.testmuai.com/support/docs/) for the full setup walkthrough.
 
-## 📥 Installation
-1. Open [Katalon Store](https://store.katalon.com/).  
-2. Install the plugin either:
-   - From the **Katalon Store** (recommended), or  
-   - Import the plugin `.jar` manually from this repository.  
-3. Add your SmartUI **`PROJECT_TOKEN`** in your project environment.
----
+### Prerequisites
 
-## ⚙️ Configuration & Usage
+- [Katalon Studio](https://www.katalon.com/): download and install the latest version
+- A [TestMu AI](https://www.testmuai.com/) account with SmartUI project access and your `PROJECT_TOKEN`
 
-Here’s a minimal sample test case showing how to integrate SmartUI with Katalon:
+### Setup
 
-```groovy
-// Start SmartUI Server
-// Replace PROJECT_TOKEN with your actual SmartUI project token
-CustomKeywords.'com.katalon.plugin.keyword.smartui.SmartKeywords.startServer'('buildName', 'configFile.json', '')
+Clone and install dependencies:
 
-// Open Browser
-WebUI.openBrowser('')
-WebUI.navigateToUrl('https://lambdatest.com')
+```bash
+# Install the SmartUI Plugin from the Katalon Store
+# Open Katalon Store inside Katalon Studio and search for "SmartUI"
+# Add your PROJECT_TOKEN to your project environment
+```
 
-// Capture Snapshot with SmartUI
-// The string parameter is the snapshot name (will appear in SmartUI Dashboard)
-CustomKeywords.'com.katalon.plugin.keyword.smartui.SmartKeywords.takeSnapshot'('snapshotName')
+Set your credentials as environment variables.
 
-// Stop SmartUI Server
-CustomKeywords.'com.katalon.plugin.keyword.smartui.SmartKeywords.stopServer'()
+**macOS / Linux:**
 
-// Close Browser
-WebUI.closeBrowser()
+```bash
+export LT_USERNAME="YOUR_USERNAME"
+export LT_ACCESS_KEY="YOUR_ACCESS_KEY"
+export LT_TUNNEL="YOUR_TUNNEL_NAME"
+```
 
-## 🚀 LambdaTest is Now TestMu AI
+**Windows:**
 
-👋 Welcome to TestMu AI, the next evolution of LambdaTest. As of January 2026, [LambdaTest is Now TestMu AI](https://www.testmuai.com/lambdatest-is-now-testmuai/) - we have evolved from a cross-browser testing cloud into a unified, AI-native quality engineering platform designed for the modern DevOps era.
+```bash
+set LT_USERNAME="YOUR_USERNAME"
+set LT_ACCESS_KEY="YOUR_ACCESS_KEY"
+set LT_TUNNEL="YOUR_TUNNEL_NAME"
+```
 
-Whether you have been part of the LambdaTest community for years or are just discovering TestMu AI, our mission remains the same: to help you ship faster with high-scale test execution, autonomous testing, and deep quality analytics.
+### Run tests
 
-### 🔄 Our Rebrand Journey
+Run your Katalon Studio test suite. SmartUI captures screenshots and uploads them to the TestMu AI SmartUI dashboard for visual comparison.
 
-In 2017, we introduced LambdaTest with a clear mission: to become the world's most trusted cloud testing platform. We built a scalable, high-performance test cloud that eliminated flakiness, improved developer feedback cycles, and accelerated release velocity for teams worldwide.
+View results on your TestMu AI dashboard.
 
-As LambdaTest grew, we expanded the platform into Test Intelligence, Visual Regression Testing, Accessibility Testing, API Testing, and Performance Testing, covering the entire testing lifecycle. These capabilities enabled teams to test any stack, on any technology, at enterprise scale.
+### Local testing with TestMu AI Tunnel
 
-Over time, we rebuilt the architecture to be AI-native from the ground up. What began as LambdaTest's high-performance testing cloud has now evolved into TestMu AI, an AI-native, multi-agent platform redefining modern quality engineering.
+To test locally hosted apps, set up the TestMu AI tunnel. OS-specific guides:
 
-We chose the name TestMu AI to reflect our shift towards intelligent, autonomous testing. While our identity has changed, our core technology and commitment to the testing community stay the same.
+- [Local Testing on Windows](https://www.testmuai.com/support/docs/local-testing-for-windows/)
+- [Local Testing on macOS](https://www.testmuai.com/support/docs/local-testing-for-macos/)
+- [Local Testing on Linux](https://www.testmuai.com/support/docs/local-testing-for-linux/)
 
-👉 Find [LambdaTest's New Home](https://www.testmuai.com/).
+Add the following to your capabilities:
 
-### 🔭 Explore TestMu AI
+```js
+tunnel: true,
+```
 
-The same infrastructure LambdaTest customers relied on, now delivered through autonomous AI agents.
+## Contributions
 
-- [KaneAI](https://www.testmuai.com/kane-ai/)
-- [Agent-to-Agent Testing](https://www.testmuai.com/agent-to-agent-testing/)
-- [HyperExecute](https://www.testmuai.com/hyperexecute/)
-- [Real Device Cloud](https://www.testmuai.com/real-device-cloud/)
-- [Pricing](https://www.testmuai.com/pricing/)
-- [Documentation](https://www.testmuai.com/support/docs/)
+Contributions are welcome. Open an issue to discuss your idea before submitting a pull request. When reporting bugs, include your Katalon Studio version and OS.
+
+## TestMu AI (Formerly LambdaTest) Community
+
+Connect with testers and developers in the [TestMu AI Community](https://community.testmuai.com/). Ask questions, share what you are building, and discuss best practices in test automation and DevOps.
+  
+## TestMu AI (Formerly LambdaTest) Certifications
+
+Earn free [TestMu AI Certifications](https://www.testmuai.com/certifications/) for testers, developers, and QA engineers. Validate your skills in Selenium, Cypress, Playwright, Appium, Espresso and more. Industry-recognized, shareable on LinkedIn, and built by practitioners, not marketers.
+
+## Learning Resources by TestMu AI (Formerly LambdaTest)
+
+Learn modern testing through tutorials, guides, videos, and weekly updates:
+
+* [TestMu AI Blog](https://www.testmuai.com/blog/)
+* [TestMu AI Learning Hub](https://www.testmuai.com/learning-hub/)
+* [TestMu AI on YouTube](https://www.youtube.com/@TestMuAI)
+* [TestMu AI Newsletter](https://www.testmuai.com/newsletter/)
+  
+## LambdaTest is Now TestMu AI
+
+On **January 12, 2026**, [LambdaTest evolved to TestMu AI](https://www.testmuai.com/lambdatest-is-now-testmuai/), the world's first fully autonomous **Agentic AI Quality Engineering Platform**.
+
+Same team. Same infrastructure. Same customer accounts. All existing LambdaTest logins, scripts, capabilities, and integrations continue to work without change.
+
+Find the new home for [LambdaTest](https://www.testmuai.com).
+
+### How LambdaTest Evolved into TestMu AI
+
+In 2017, we launched LambdaTest with a simple mission: make testing fast, reliable, and accessible. As LambdaTest grew, we expanded into Test Intelligence, Visual Regression Testing, Accessibility Testing, API Testing, and Performance Testing, covering the full depth of the testing lifecycle.
+
+As software development entered the AI era, testing had to evolve, too. We rebuilt the architecture to be AI-native from the ground up, with autonomous agents that **plan, author, execute, analyze, and optimize tests** while keeping humans in the loop. The platform integrates with your repos, CI, IDEs, and terminals, continuously learning from every code change and development signal.
+
+That evolution earned a new name: **TestMu AI**, built for an AI-first future of quality engineering. TestMu is not a new name for us. It is the name of our annual community conference, which has brought together 100,000+ quality engineers to discuss how AI would reshape testing, long before that became an industry norm. 
+
+What started as a high-performance cloud testing platform has transformed into an AI-native, multi-agent system powering a connected, end-to-end quality layer. That evolution defined a new identity: LambdaTest evolved into TestMu AI, built for an AI-first future of quality engineering.
+
+## Support
+
+Got a question? Email [support@testmuai.com](mailto:support@testmuai.com) or chat with us 24x7 from our chat portal.
