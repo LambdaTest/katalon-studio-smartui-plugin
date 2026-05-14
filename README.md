@@ -17,7 +17,7 @@ With TestMu AI (Formerly LambdaTest), you can run visual regression tests using 
 
 ### Prerequisites
 
-- [Katalon Studio](https://www.katalon.com/): download and install the latest version
+- Katalon Studio: download and install the latest version
 - A [TestMu AI](https://www.testmuai.com/) account with SmartUI project access and your `PROJECT_TOKEN`
 
 ### Setup
